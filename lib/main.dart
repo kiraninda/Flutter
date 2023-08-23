@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -51,37 +54,43 @@ class _LoginState extends State<Login> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("MyApp Title", style:TextStyle(color: Colors.black, fontSize: 28.0,
+          const Text("Kiran App", style:TextStyle(color: Colors.black, fontSize: 28.0,
           fontWeight: FontWeight.bold,
           ),
           ),
-          const Text("Login To Your App",style: TextStyle(color: Colors.black, fontSize: 44.0, fontWeight:FontWeight.bold,
+          const Text("LOGIN FORM",style: TextStyle(color: Colors.black, fontSize: 44.0, fontWeight:FontWeight.bold,
           ),
           ),
           const SizedBox(height: 44.0,
+          ),
+          const Text("Email", style:TextStyle(color: Colors.black, fontSize: 18.0,
+          ),
           ),
           TextField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "User Email",
-              prefixIcon: Icon(Icons.mail, color: Colors.black),          
+              hintText: "Type Your Email",
+              prefixIcon: Icon(Icons.mail, color: Color.fromARGB(255, 105, 105, 105)),          
               ),
           ),
           const SizedBox(
             height: 26.0,
           ),
+          const Text("Password", style:TextStyle(color: Colors.black, fontSize: 18.0,
+          ),
+          ),
           TextField(
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-              hintText: "User Password",
-              prefixIcon: Icon(Icons.lock, color: Colors.black),          
+              hintText: "Type Your Password",
+              prefixIcon: Icon(Icons.lock, color: Color.fromARGB(255, 105, 105, 105)),
               ),
           ),
           const SizedBox(height: 8.0,
           ),
-          const Text("Don't Remember Your Password?", 
+          const Text("Forgot Password?", 
           style: TextStyle(color: Colors.blue),
           ),
           const SizedBox(
@@ -90,7 +99,7 @@ class _LoginState extends State<Login> {
           Container(
             width: double.infinity,
             child: RawMaterialButton(
-              fillColor: const Color.fromARGB(255, 0, 97, 254),
+              fillColor: Color.fromARGB(255, 0, 127, 254),
               elevation: 0.0,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
